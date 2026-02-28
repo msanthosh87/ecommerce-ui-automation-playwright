@@ -7,6 +7,13 @@ test('TC-001 has title', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
 
+test('TC-001 has no title', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+  await page.getByRole('link', { name: 'Get started' }).click();
+  await expect(page).toHaveURL(/.*intro/);
+  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+});
+
 test('TC-002 get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
