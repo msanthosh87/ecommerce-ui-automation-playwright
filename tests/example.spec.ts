@@ -37,7 +37,6 @@ test('TC-006 get started link', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
 
-
 test('TC-007 get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
@@ -47,3 +46,4 @@ test('TC-007 get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
